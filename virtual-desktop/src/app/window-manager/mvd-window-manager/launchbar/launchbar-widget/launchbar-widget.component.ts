@@ -38,6 +38,7 @@ export class LaunchbarWidgetComponent implements OnInit {
   popupVisible: boolean;
   dateModifier: string;
   timeModifier: string;
+  utcModifier: string;
   @Output() popupStateChanged = new EventEmitter<boolean>();
   @ViewChild('usericon') userIcon: ElementRef;
   @ViewChild('logoutbutton') logoutButton: ElementRef;
@@ -57,8 +58,10 @@ export class LaunchbarWidgetComponent implements OnInit {
     this.authenticationManager = this.injector.get(MVDHosting.Tokens.AuthenticationManagerToken);
     this.date = new Date();
     this.popupVisible = false;
-    this.dateModifier = 'shortDate';
-    this.timeModifier = 'shortTime';
+    this.dateModifier = this.languageLocaleService.globalization.getDateFormatPreference();
+    this.timeModifier = this.languageLocaleService.globalization.getTimeFormatPreference();
+    this.utcModifier = this.languageLocaleService.globalization.getUTC();
+    // console.log('THE TIME MODIFIER IS ' + this.dateModifier)
   }
 
   ngOnInit(): void {

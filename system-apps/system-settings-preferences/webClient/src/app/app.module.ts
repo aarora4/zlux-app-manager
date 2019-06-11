@@ -21,11 +21,11 @@ import { AppComponent } from './app.component';
 import { LanguageComponent } from './language/language.component';
 import { LocaleComponent } from './locale/locale.component';
 import { MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule } from '@angular/material';
-import { LaunchbarWidgetComponent } from '../../../../../virtual-desktop/src/app/window-manager/mvd-window-manager/launchbar/launchbar-widget/launchbar-widget.component'
+// import { LaunchbarWidgetComponent } from '../../../../../virtual-desktop/src/app/window-manager/mvd-window-manager/launchbar/launchbar-widget/launchbar-widget.component'
 
 @NgModule({
   declarations: [
-    AppComponent, LanguageComponent, LocaleComponent, LaunchbarWidgetComponent
+    AppComponent, LanguageComponent, LocaleComponent
   ],
   imports: [
     CommonModule,

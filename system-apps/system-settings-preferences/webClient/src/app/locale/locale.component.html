@@ -20,41 +20,42 @@
           <label class="language-sublabel">Default date and time is set on your local device. To change this setting, select a preferred timezone.</label>
           <mat-form-field class="dropdown">
             <!-- <mat-label>Cars</mat-label> -->
-            <select matNativeControl>
-                <option matInput value="centralTime">(UTC-5:00) Central Time - Chicago</option>
-                <option matInput value="mountainTime">(UTC-6:00) Mountain Time - Denver</option>
-                <option matInput value="pacificTime">(UTC-7:00) Pacific Time - Los Angeles</option>
-                <option matInput value="alaskaTime">(UTC-8:00) Alaska Time - Anchorage</option>
+            <select matNativeControl [(ngModel)]='idUTCOffset'>
+                <option matInput value='+0000'>No UTC Offset (default)</option>
+                <option matInput value="-0500">(UTC-5:00) Central Time - Chicago</option>
+                <option matInput value="-0600">(UTC-6:00) Mountain Time - Denver</option>
+                <option matInput value="-0700">(UTC-7:00) Pacific Time - Los Angeles</option>
+                <option matInput value="-0800">(UTC-8:00) Alaska Time - Anchorage</option>
                 <input matInput value="val" type="datetime-local">
             </select>
           </mat-form-field>
-          <button type="submit" class="language-submit" (click)="applyLanguage()">Restore Default</button>
+          <button type="submit" class="language-submit">Restore Default</button>
           </div>
           <div class="setting-section">
             <label class="language-label"> Formatting</label>
           <label class="language-sublabel">Default date and time format is set by your local device. To change these settings, select from an option below.</label>
           <mat-form-field class="dropdown-smaller">
             <!-- <mat-label>Cars</mat-label> -->
-            <select matNativeControl>
-              <option value="centralTime">{{date | date: 'shortTime'}}</option>
-              <option value="centralTime">{{date | date: 'mediumTime'}}</option>
-              <option value="centralTime">{{date | date: 'longTime'}}</option>
+            <select matNativeControl [(ngModel)]='idTimeFormat'>
+              <option value="shortTime">{{date | date: 'shortTime'}}</option>
+              <option value="mediumTime">{{date | date: 'mediumTime'}}</option>
+              <option value="longTime">{{date | date: 'longTime'}}</option>
       
               <input matInput value="val" type="datetime-local">
             </select>
           </mat-form-field>
           <mat-form-field class="dropdown-smaller">
             <!-- <mat-label>Cars</mat-label> -->
-            <select matNativeControl>
-              <option value="centralTime">{{date | date: 'shortDate'}}</option>
-              <option value="centralTime">{{date | date: 'mediumDate'}}</option>
-              <option value="centralTime">{{date | date: 'longDate'}}</option>
-              <option value="centralTime">{{date | date: 'fullDate'}}</option>
+            <select matNativeControl [(ngModel)]='idDateFormat'>
+              <option value="shortDate">{{date | date: 'shortDate'}}</option>
+              <option value="mediumDate">{{date | date: 'mediumDate'}}</option>
+              <option value="longDate">{{date | date: 'longDate'}}</option>
+              <option value="fullDate">{{date | date: 'fullDate'}}</option>
               <input matInput value="val" type="datetime-local">
       
             </select>
           </mat-form-field>
-          <button type="submit" class="language-submit" (click)="applyLanguage()" style="margin-left: 20px">Restore Default</button>
+          <button type="submit" class="language-submit" style="margin-left: 20px" (click)="restoreFormatting()">Restore Default</button>
           </div>
     
     
@@ -62,7 +63,7 @@
     
 
     <div style="text-align: center; display:flex; height: 30%; width: 100%; justify-content: center">
-      <button type="submit" class="language-apply">Apply</button>
+      <button type="submit" class="language-apply" (click)="applyLanguage()">Apply</button>
     </div>
     
   </div>
@@ -75,7 +76,7 @@
       (onCloseWindow)="closeRestartWindow()"
       [dark]="true"
       [currentStyle]="{ 'width': '700px',
-      'height': '400px' , 
+      'height': '230px' , 
       'background-color': 'rgb(236, 200, 240)', 
       'font-size': 'large', 
       'padding': '5px', 

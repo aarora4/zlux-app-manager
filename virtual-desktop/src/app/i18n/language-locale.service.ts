@@ -27,7 +27,10 @@ export class LanguageLocaleService {
 
   constructor(
     // private launchBarWidgetComponenet: LaunchbarWidgetComponent
+    
+    
   ) {
+    // console.log(this.launchBarWidgetComponenet)
   }
 
   getLanguage(): string {

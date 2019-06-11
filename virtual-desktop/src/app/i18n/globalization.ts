@@ -141,7 +141,7 @@ export class Globalization implements ZLUX.Globalization {
     if (timeFormatPreference) {
       return timeFormatPreference;
     } else  {
-      return "shortTime";
+      return "longTime";
     }
 
   }

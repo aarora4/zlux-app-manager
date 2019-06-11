@@ -9,7 +9,7 @@
   Copyright Contributors to the Zowe Project.
 */
 import { Component, Inject, Optional } from '@angular/core';
-import { BaseLogger } from '../../../../../../virtual-desktop/src/app/shared/logger';
+// import { BaseLogger } from '../../../../../../virtual-desktop/src/app/shared/logger';
 import { LanguageLocaleService } from '../../../../../../virtual-desktop/src/app/i18n/language-locale.service';
 import { Angular2InjectionTokens, Angular2PluginWindowActions } from 'pluginlib/inject-resources';
 import { TranslationService } from 'angular-l10n';
@@ -25,11 +25,14 @@ import { TranslationService } from 'angular-l10n';
 })
 
 export class LocaleComponent { 
-  private readonly logger: ZLUX.ComponentLogger = BaseLogger;
+  // private readonly logger: ZLUX.ComponentLogger = BaseLogger;
   public selectedLanguage: string;
   private idLanguage: string;
   public isRestartWindowVisible: boolean;
   public isVeilVisible: boolean;
+  public idTimeFormat: string;
+  public idUTCOffset: string;
+  public idDateFormat: string;
 
   // Strings used in UI
   public Languages: string;
@@ -55,21 +58,28 @@ export class LocaleComponent {
     this.isVeilVisible = false;
     this.updateLanguageSelection();
     this.updateLanguageStrings();
+    this.idTimeFormat = this.languageLocaleService.globalization.getTimeFormatPreference();
+    this.idUTCOffset = this.languageLocaleService.globalization.getUTC();
+    this.idDateFormat = this.languageLocaleService.globalization.getDateFormatPreference();
     if (this.windowActions) {this.windowActions.setTitle(this.Languages);}
     this.date = new Date();
   }
 
   applyLanguage(): void {
-    this.languageLocaleService.setLanguage(this.idLanguage).subscribe(
-      arg => { 
-        this.logger.debug(`setLanguage, arg=`,arg);
-        this.isRestartWindowVisible = true;
-        this.isVeilVisible = true;
-       },
-      err => {
-        this.logger.warn("setLanguage error=",err);
-      }
-    )
+    this.languageLocaleService.globalization.setDateFormatPreference(this.idDateFormat)
+
+    this.languageLocaleService.globalization.setUTC(this.idUTCOffset)
+    this.languageLocaleService.globalization.setTimeFormatPreference(this.idTimeFormat)
+    this.isRestartWindowVisible = true;
+    this.isVeilVisible = true;
+  }
+  restoreFormatting(): void {
+    this.idDateFormat = 'shortDate'
+    this.idTimeFormat = 'shortTime'
+    this.languageLocaleService.globalization.setDateFormatPreference('shortDate')
+    this.languageLocaleService.globalization.setTimeFormatPreference('shortTime')
+    this.isRestartWindowVisible = true;
+    this.isVeilVisible = true;
   }
 
   closeRestartWindow(): void {
