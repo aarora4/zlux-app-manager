@@ -24,9 +24,9 @@
 <div class="launchbar-clock">
   <div class="launchbar-separator left"></div>
   <span>
-    <span>{{date | date:'shortTime'}}</span>
-    <br>
-    <span>{{date | date:'shortDate'}}</span>
+    <span>{{date | date:timeModifier:'+0200'}}</span>
+    <br> 
+    <span>{{date | date:dateModifier}}</span>
   </span>
   <div #usericon class="launchbar-tray-icon settings" (click)="togglePersonalizationPanel()"></div>
   <div #usericon class="launchbar-tray-icon user" (click)="togglePopup()"></div>

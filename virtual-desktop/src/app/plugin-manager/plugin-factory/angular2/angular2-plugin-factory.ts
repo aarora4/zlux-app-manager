@@ -18,9 +18,9 @@ import { Compiler, CompilerOptions, ApplicationRef, Injector } from '@angular/co
 import { DomPortalOutlet, ComponentPortal } from '@angular/cdk/portal';
 import { Observable } from 'rxjs/Rx';
 
-import { ComponentFactory } from 'zlux-base/registry/registry';
+import { ComponentFactory } from '../../../../../../../zlux-platform/base/src/registry/registry';
 import { TranslationLoaderService } from '../../../i18n/translation-loader.service';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../../shared/logger';
 
 interface MvdNativeAngularPlugin {
   pluginModule: any;

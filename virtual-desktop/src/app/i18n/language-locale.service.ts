@@ -15,7 +15,7 @@ import 'rxjs/add/operator/mergeMap';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { BaseLogger } from '../shared/logger';
 import { _throw } from 'rxjs/observable/throw';
-
+// import { LaunchbarWidgetComponent } from "../window-manager/mvd-window-manager/launchbar/launchbar-widget/launchbar-widget.component"
 import { Globalization } from './globalization';
 
 @Injectable()
@@ -26,6 +26,7 @@ export class LanguageLocaleService {
   readonly globalization: Globalization = new Globalization();
 
   constructor(
+    // private launchBarWidgetComponenet: LaunchbarWidgetComponent
   ) {
   }
 
@@ -88,6 +89,7 @@ export class LanguageLocaleService {
       });
     }
   }
+  
 
   setLanguage(language: string): Observable<any> {
     this.logger.debug(`Attempting to set language to ${language}`)
@@ -97,5 +99,16 @@ export class LanguageLocaleService {
   setLocale(locale: string): Observable<any> {
     return this.setLanguageOrLocale('locale', locale);
   }
+
+//   /**
+//    * For both locale and language choices, we check if there is a corresponding locale file
+//    * and reject the choice if none is found.
+//    *
+//    * @param preferenceName either 'UTC' or 'DateFormatPreference' or 'TimeFormatPreference'
+//    * @param requestedValue
+//    */
+//   private setDateTimeProperty(preferenceName: string, requestedValue: string): Observable<any> {
+//     return fromPromise(this.globalization.setPreference(preferenceName, requestedValue));
+// }
 
 }

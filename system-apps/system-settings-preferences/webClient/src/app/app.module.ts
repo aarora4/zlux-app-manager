@@ -10,24 +10,33 @@
 */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LanguageLocaleService } from '../../../../../virtual-desktop/src/app/i18n/language-locale.service';
 import { ZluxPopupWindowModule, ZluxButtonModule } from '@zlux/widgets';
+
 
 // import libraries modules
  
 import { AppComponent } from './app.component';
 import { LanguageComponent } from './language/language.component';
+import { LocaleComponent } from './locale/locale.component';
+import { MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule } from '@angular/material';
+import { LaunchbarWidgetComponent } from '../../../../../virtual-desktop/src/app/window-manager/mvd-window-manager/launchbar/launchbar-widget/launchbar-widget.component'
 
 @NgModule({
   declarations: [
-    AppComponent, LanguageComponent
+    AppComponent, LanguageComponent, LocaleComponent, LaunchbarWidgetComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ZluxPopupWindowModule,
-    ZluxButtonModule
+    ZluxButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
+    ReactiveFormsModule
     ],
   providers: [LanguageLocaleService],
   bootstrap: [AppComponent]

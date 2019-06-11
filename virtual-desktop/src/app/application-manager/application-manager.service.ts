@@ -11,9 +11,9 @@
 import { Injectable, Injector, NgModuleFactory, Compiler, ComponentRef, Type, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { PluginLoader } from 'app/plugin-manager/shared/plugin-loader';
-import { DesktopPluginDefinitionImpl } from 'app/plugin-manager/shared/desktop-plugin-definition';
-import { PluginManager } from "app/plugin-manager/shared/plugin-manager";
+import { PluginLoader } from '../plugin-manager/shared/plugin-loader';
+import { DesktopPluginDefinitionImpl } from '../plugin-manager/shared/desktop-plugin-definition';
+import { PluginManager } from "../plugin-manager/shared/plugin-manager";
 
 import { LoadFailureComponent } from './load-failure/load-failure.component';
 import { InjectionManager } from './injection-manager/injection-manager.service';
@@ -22,8 +22,8 @@ import { FailureModule } from './load-failure/failure.module';
 // import { ViewportId } from './viewport-manager/viewport';
 import { ViewportManager } from './viewport-manager/viewport-manager.service';
 import { EmbeddedInstance } from 'pluginlib/inject-resources';
-import { BaseLogger } from 'virtual-desktop-logger';
-import { IFRAME_NAME_PREFIX, INNER_IFRAME_NAME } from '../shared/named-elements.ts';
+import { BaseLogger } from '../../../../virtual-desktop/src/app/shared/logger';
+import { IFRAME_NAME_PREFIX, INNER_IFRAME_NAME } from '../../app/shared/named-elements';
 
 @Injectable()
 export class ApplicationManager implements MVDHosting.ApplicationManagerInterface {

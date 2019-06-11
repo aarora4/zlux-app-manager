@@ -12,7 +12,7 @@
 
 import { Component, Inject } from '@angular/core';
 
-import { LOAD_FAILURE_ERRORS } from 'app/application-manager/load-failure/failure-injection-tokens';
+import { LOAD_FAILURE_ERRORS } from '../load-failure/failure-injection-tokens';
 
 @Component({
   templateUrl: 'load-failure.component.html',

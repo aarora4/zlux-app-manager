@@ -1,0 +1,109 @@
+<!-- 
+  This program and the accompanying materials are
+  made available under the terms of the Eclipse Public License v2.0 which accompanies
+  this distribution, and is available at https://www.eclipse.org/legal/epl-v20.html
+  
+  SPDX-License-Identifier: EPL-2.0
+  
+  Copyright Contributors to the Zowe Project.
+-->
+<div class="language-main-window">
+  <div class="language-content-left">
+      <img class="language-icon">
+      
+  </div>
+  <div class="language-content-right">
+    <div style="height: 70%">
+        <div class="setting-section">
+      
+            <label class="language-label"> Setting</label>
+          <label class="language-sublabel">Default date and time is set on your local device. To change this setting, select a preferred timezone.</label>
+          <mat-form-field class="dropdown">
+            <!-- <mat-label>Cars</mat-label> -->
+            <select matNativeControl>
+                <option matInput value="centralTime">(UTC-5:00) Central Time - Chicago</option>
+                <option matInput value="mountainTime">(UTC-6:00) Mountain Time - Denver</option>
+                <option matInput value="pacificTime">(UTC-7:00) Pacific Time - Los Angeles</option>
+                <option matInput value="alaskaTime">(UTC-8:00) Alaska Time - Anchorage</option>
+                <input matInput value="val" type="datetime-local">
+            </select>
+          </mat-form-field>
+          <button type="submit" class="language-submit" (click)="applyLanguage()">Restore Default</button>
+          </div>
+          <div class="setting-section">
+            <label class="language-label"> Formatting</label>
+          <label class="language-sublabel">Default date and time format is set by your local device. To change these settings, select from an option below.</label>
+          <mat-form-field class="dropdown-smaller">
+            <!-- <mat-label>Cars</mat-label> -->
+            <select matNativeControl>
+              <option value="centralTime">{{date | date: 'shortTime'}}</option>
+              <option value="centralTime">{{date | date: 'mediumTime'}}</option>
+              <option value="centralTime">{{date | date: 'longTime'}}</option>
+      
+              <input matInput value="val" type="datetime-local">
+            </select>
+          </mat-form-field>
+          <mat-form-field class="dropdown-smaller">
+            <!-- <mat-label>Cars</mat-label> -->
+            <select matNativeControl>
+              <option value="centralTime">{{date | date: 'shortDate'}}</option>
+              <option value="centralTime">{{date | date: 'mediumDate'}}</option>
+              <option value="centralTime">{{date | date: 'longDate'}}</option>
+              <option value="centralTime">{{date | date: 'fullDate'}}</option>
+              <input matInput value="val" type="datetime-local">
+      
+            </select>
+          </mat-form-field>
+          <button type="submit" class="language-submit" (click)="applyLanguage()" style="margin-left: 20px">Restore Default</button>
+          </div>
+    
+    
+    </div>
+    
+
+    <div style="text-align: center; display:flex; height: 30%; width: 100%; justify-content: center">
+      <button type="submit" class="language-apply">Apply</button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Zowe popup window is immutable by design, so we must pass a style via HTML -->
+<div class="global-veil" *ngIf="isVeilVisible">
+<zlux-popup-window
+      header="{{LanguageChanges}}"
+      (onCloseWindow)="closeRestartWindow()"
+      [dark]="true"
+      [currentStyle]="{ 'width': '700px',
+      'height': '400px' , 
+      'background-color': 'rgb(236, 200, 240)', 
+      'font-size': 'large', 
+      'padding': '5px', 
+      'margin': 'auto' ,
+      'text-align': 'center', 
+      'margin-top': '15%', 
+      'color': '#36617a' }"
+      *ngIf="isRestartWindowVisible">
+      <div class="content-close"><br>{{RestartDescr1}}<br>{{RestartDescr2}}</div>
+      <zlux-popup-window-button-area [ngStyle]="{'background-color':'rgb(236, 200, 240)'}">
+        <zlux-button (click)="restartZowe(); exit();"
+          label="{{RestartNow}}"
+          callToAction="true">
+        </zlux-button>
+        <zlux-button (click)="closeRestartWindow()"
+          label="{{RestartLater}}">
+        </zlux-button>
+      </zlux-popup-window-button-area>
+  </zlux-popup-window>
+</div>
+
+
+<!-- 
+  This program and the accompanying materials are
+  made available under the terms of the Eclipse Public License v2.0 which accompanies
+  this distribution, and is available at https://www.eclipse.org/legal/epl-v20.html
+  
+  SPDX-License-Identifier: EPL-2.0
+  
+  Copyright Contributors to the Zowe Project.
+-->

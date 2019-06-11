@@ -14,7 +14,7 @@ import { Component, Injector } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { ContextMenuItem } from 'pluginlib/inject-resources';
 import { WindowManagerService } from '../shared/window-manager.service';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../../shared/logger';
 
 @Component({
   selector: 'rs-com-mvd-desktop',

@@ -11,7 +11,7 @@
 */
 
 import { Angular2InjectionTokens } from 'pluginlib/inject-resources';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../shared/logger';
 
 export class Viewport {
   private static nextViewportId: MVDHosting.ViewportId = 0;

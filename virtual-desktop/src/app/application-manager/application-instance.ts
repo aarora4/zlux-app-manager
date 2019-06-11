@@ -17,7 +17,7 @@ declare var Reflect: any;
 // import { DesktopPluginDefinitionImpl } from 'app/plugin-manager/shared/desktop-plugin-definition';
 
 // import { ViewportId } from './viewport-manager/viewport';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../shared/logger';
 
 
 

@@ -13,15 +13,16 @@
 import { Injectable, ViewContainerRef, ComponentRef, ComponentFactoryResolver, Injector } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
-import { DesktopPluginDefinitionImpl } from 'app/plugin-manager/shared/desktop-plugin-definition';
-import { ViewportComponent } from 'app/application-manager/viewport-manager/viewport/viewport.component';
+import { DesktopPluginDefinitionImpl } from '../../../plugin-manager/shared/desktop-plugin-definition';
+import { ViewportComponent } from '../../../application-manager/viewport-manager/viewport/viewport.component';
+
 //import { AppPropertiesWindowComponent } from '../propertieswindow/app-properties-window.component';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../../shared/logger';
 
 import { DesktopWindow, LocalWindowEvents } from './desktop-window';
 import { WindowPosition } from './window-position';
 import { DesktopWindowState, DesktopWindowStateType } from '../shared/desktop-window-state';
-import { WindowMonitor } from 'app/shared/window-monitor.service';
+import { WindowMonitor } from '../../../shared/window-monitor.service';
 import { ContextMenuItem, Angular2PluginWindowActions,
   Angular2PluginWindowEvents, Angular2InjectionTokens, Angular2PluginViewportEvents, Angular2PluginEmbedActions, InstanceId, EmbeddedInstance
 } from 'pluginlib/inject-resources';

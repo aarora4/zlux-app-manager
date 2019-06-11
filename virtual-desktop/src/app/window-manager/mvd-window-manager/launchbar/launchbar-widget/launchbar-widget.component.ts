@@ -36,6 +36,8 @@ export class LaunchbarWidgetComponent implements OnInit {
   private readonly plugin: any = ZoweZLUX.pluginManager.getDesktopPlugin();
   date: Date;
   popupVisible: boolean;
+  dateModifier: string;
+  timeModifier: string;
   @Output() popupStateChanged = new EventEmitter<boolean>();
   @ViewChild('usericon') userIcon: ElementRef;
   @ViewChild('logoutbutton') logoutButton: ElementRef;
@@ -55,6 +57,8 @@ export class LaunchbarWidgetComponent implements OnInit {
     this.authenticationManager = this.injector.get(MVDHosting.Tokens.AuthenticationManagerToken);
     this.date = new Date();
     this.popupVisible = false;
+    this.dateModifier = 'shortDate';
+    this.timeModifier = 'shortTime';
   }
 
   ngOnInit(): void {
@@ -114,6 +118,8 @@ export class LaunchbarWidgetComponent implements OnInit {
   setLocale(value: string): void {
     this.languageLocaleService.setLocale('US').subscribe(arg => this.logger.debug(`setLocale, arg=`,arg))
   }
+
+  
 }
 
 

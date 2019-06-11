@@ -18,7 +18,7 @@ import { PluginFactory } from '../plugin-factory/plugin-factory';
 import { Angular2PluginFactory } from '../plugin-factory/angular2/angular2-plugin-factory';
 import { IFramePluginFactory } from '../plugin-factory/iframe/iframe-plugin-factory';
 import { ReactPluginFactory } from '../plugin-factory/react/react-plugin-factory';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../shared/logger';
 
 @Injectable()
 export class PluginLoader {

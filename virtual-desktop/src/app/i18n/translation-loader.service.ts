@@ -19,7 +19,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import { LanguageLocaleService } from './language-locale.service';
 import * as Rx from 'rxjs/Rx';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../shared/logger';
 
 @Injectable()
 export class TranslationLoaderService {

@@ -11,7 +11,7 @@
 */
 
 import { PluginWindowStyle } from './plugin-window-style';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../shared/logger';
 
 export class DesktopPluginDefinitionImpl implements MVDHosting.DesktopPluginDefinition {
   private readonly logger: ZLUX.ComponentLogger = BaseLogger;

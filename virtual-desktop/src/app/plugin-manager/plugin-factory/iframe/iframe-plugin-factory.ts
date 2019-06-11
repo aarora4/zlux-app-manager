@@ -16,7 +16,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PluginFactory } from '../plugin-factory';
 //import { DesktopPluginDefinition } from '../../shared/desktop-plugin-definition';
 import { CompiledPlugin } from '../../shared/compiled-plugin';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../../shared/logger';
 import { IFRAME_NAME_PREFIX } from '../../../shared/named-elements';
 
 var dragOn = false;

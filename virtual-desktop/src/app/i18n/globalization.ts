@@ -116,12 +116,54 @@ export class Globalization implements ZLUX.Globalization {
     }
   }
 
+  getUTC(): string {
+    const UTC = this.getPreference('UTC')
+
+    if (UTC) {
+      return UTC;
+    } else  {
+      return "+0000";
+    }
+  }
+  getDateFormatPreference(): string {
+    const dateFormatPreference = this.getPreference('DateFormatPreference');
+
+    if (dateFormatPreference) {
+      return dateFormatPreference;
+    } else {
+      return "shortDate";
+    }
+  }
+
+  getTimeFormatPreference(): string {
+    const timeFormatPreference = this.getPreference('TimeFormatPreference')
+
+    if (timeFormatPreference) {
+      return timeFormatPreference;
+    } else  {
+      return "shortTime";
+    }
+
+  }
+
   setLanguage(language: string): Promise<any> {
     return this.setPreference('language', language);
   }
 
   setLocale(locale: string): Promise<any> {
     return this.setPreference('locale', locale);
+  }
+
+  setUTC(UTC: string): Promise<any> {
+    return this.setPreference('UTC', UTC);
+  }
+
+  setDateFormatPreference(dateFormatPreference: string): Promise<any> {
+    return this.setPreference('DateFormatPreference', dateFormatPreference);
+  }
+
+  setTimeFormatPreference(timeFormatPreference: string): Promise<any> {
+    return this.setPreference('TimeFormatPreference', timeFormatPreference);
   }
 
 }

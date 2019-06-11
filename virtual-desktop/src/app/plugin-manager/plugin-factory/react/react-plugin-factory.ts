@@ -17,7 +17,7 @@ import { PluginFactory } from '../plugin-factory';
 import { CompiledPlugin } from '../../shared/compiled-plugin';
 
 import { ReactPluginComponent, ReactEntryHook } from './react-plugin.component';
-import { BaseLogger } from 'virtual-desktop-logger';
+import { BaseLogger } from '../../../shared/logger';
 
 interface MvdNativeReactPluginComponentDefinition {
   registerComponentFactories(): void;

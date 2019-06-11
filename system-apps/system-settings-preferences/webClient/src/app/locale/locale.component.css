@@ -1,0 +1,140 @@
+
+
+/*
+  This program and the accompanying materials are
+  made available under the terms of the Eclipse Public License v2.0 which accompanies
+  this distribution, and is available at https://www.eclipse.org/legal/epl-v20.html
+  
+  SPDX-License-Identifier: EPL-2.0
+  
+  Copyright Contributors to the Zowe Project.
+*/
+ 
+.dropdown{
+  width: 260px;
+}
+.dropdown-smaller{
+  width: 122px;
+  margin-right: 25px;
+}
+.setting-section {
+  padding: inherit;
+  margin-left: 4px;
+  
+}
+
+.language-separator-hor {
+  border-color: #e58e3e;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 1px;
+}
+
+.language-button {
+  padding: 10px;
+  color: #3eeefe;
+  background-color: #0000000a;
+  border: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+
+.language-submit {
+  background-color: #ffffff;
+  color: #9e9b9b;
+  font-size: 12px;
+  border: none;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  text-decoration: underline;
+  
+}
+
+.language-apply {
+  background-color: #333333;
+  color: #9e9b9b;
+  font-size: 12px;
+  border: none;
+  width: 96%;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: inline-block;
+  align-self: flex-end
+  
+
+  
+  
+}
+
+.language-label {
+  font-size: larger;
+  font-weight: bold;
+  
+  width: 100%;
+}
+.language-sublabel {
+  font-size: medium;
+  font-style: italic;
+  
+  width: 100%;
+}
+
+.language-icon {
+  width: 121px;
+  height: 110px;
+  background-image: url("../../assets/TimeDateIcon.png");
+  background-size: 121px 110px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 110px;
+  background-repeat: no-repeat;
+  
+}
+
+.language-main-window {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+
+.language-content-left{
+  flex-direction: column;
+  width: 30%;
+  background-color: #333333;
+  text-align: center;
+}
+
+.language-content-right{
+  width: 70%;
+  padding: 5px;
+  text-align: left;
+  min-height: 300px;
+  min-width: 450px;
+}
+
+.global-veil {
+  width: 300%;
+  height: 400%;
+  background-color: #00000091;
+  position: fixed;
+  margin-left: -100%;
+  margin-top: -150%;
+}
+
+/*
+  This program and the accompanying materials are
+  made available under the terms of the Eclipse Public License v2.0 which accompanies
+  this distribution, and is available at https://www.eclipse.org/legal/epl-v20.html
+  
+  SPDX-License-Identifier: EPL-2.0
+  
+  Copyright Contributors to the Zowe Project.
+*/
+
